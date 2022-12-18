@@ -1,0 +1,29 @@
+<html>
+<title>
+	Share your social media link: in an untraditional way!
+</title>
+<body style="text-align: center;">
+<form>
+	<input type="text" style="width: 400px;" name="url" placeholder="Enter the link here (eg: https://mastodon.social/@mustafauysal)" required />
+	<button type="button" id="make-it-nice" onclick="parseIt();">Submit</button>
+</form>
+
+<div id="result">
+
+</div>
+
+<script>
+    function parseIt() {
+        document.getElementById('result').innerHTML = "";
+        // get the url from the input
+        var url = document.querySelector('input[name="url"]').value;
+        // write url string char by char to the console
+        for (var i = 0; i < url.length; i++) {
+            document.getElementById('result').innerHTML += url[i] + "<br>";
+        }
+
+        document.getElementById('result').innerHTML += '<span style="color: red;">"Your link is ready! Copy and paste it to your social media account!"</span>';
+        return false;
+    }
+</script>
+</html>
